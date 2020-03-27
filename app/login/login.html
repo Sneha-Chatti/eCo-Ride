@@ -1,0 +1,52 @@
+<div ng-controller="LoginController">
+    <header style="margin-top: 60px" class="container"> </header>
+    <section id="Login" class="container">
+        <div class="col-md-4 col-md-offset-1">
+            <form class="form-inline" name="loginForm" autocorrect="off" autocomplete="off">
+                <fieldset>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <h3>Login to eCo-Ride</h3>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <input tabindex="1" class="form-control" required pattern="(?=.*[\da-zA-Z]).{5,}" type="text" ng-model="user.username" name="username" placeholder="Username or email" autocorrect="off" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <input tabindex="1" class="form-control" required pattern="(?=.*\d)(?=.*[a-zA-Z]).{5,}" type="password" ng-model="user.password" name="password" placeholder="Password" autocorrect="off" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="textSpace" style="margin-top: 5px">
+                        <div class="form-group">
+                            <button class="btn btn-success" ng-disabled="loginForm.$invalid" ng-click="login(user,loginForm)" type="submit">Login</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <img class="img-responsive" src="../img/LoginScreen.gif" />
+        </div>
+    </section>
+    <div class="modal fade" id="successDialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>eCo-Ride</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Successfully logged in.</p>
+                    <p>Welcome {{loggedInUser.username}}</p>
+                </div>
+                <div class="modal-footer textSpace">
+                    <a class="btn btn-success" data-dismiss="modal" ng-click="goToPage('#!/shareRide')">Give an eCo-Ride</a>
+                    <a class="btn btn-success" data-dismiss="modal" ng-click="goToPage('#!/bookRide')">Get an eCo-Ride</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

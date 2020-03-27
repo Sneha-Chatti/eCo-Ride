@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="ecoRideApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="ecoRideApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="ecoRideApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="ecoRideApp">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>eCo-Ride</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="img/logo.ico" />
+    <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css"> -->
+    <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css"> -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
+    <link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet/less" href="css/eCoVariables.less">
+    <link rel="stylesheet/less" href="css/eCo-theme.less">
+    <link rel="stylesheet" href="css/eCo.css">
+
+    <!-- <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script> -->
+    <script type="text/javascript" src="js/less.min.js"></script>
+    <!-- Less Should be added after all the style sheets are added -->
+</head>
+
+<body class="bg-primary" id="top" ng-cloak>
+    <div>
+        <nav class="navbar navbar-default navbar-fixed-top bg-primary" role="navigation">
+            <div class="container">
+                <div class="navbar-header navbar-left">
+                    <span>
+					<a class="navbar-brand" href="#">
+						<img src="img/logo.png" alt="" class="img-responsive" width="75px"	height="75px" >
+					</a>
+				    </span>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#eCoRideMenu">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+				    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="eCoRideMenu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Home</a></li>
+                        <!-- <li><a class="btn btn-success" ng-hide="loggedIn" href="#!/login">Login / Register</a></li> -->
+                        <li><a href="#!/shareRide">Give an eCo-Ride</a></li>
+                        <li><a href="#!/bookRide">Get an eCo-Ride</a></li>
+                        <li><a class="page-scroll" ng-hide="loggedIn" href="#HowEcoRide">How eCo-Ride works</a></li>
+                        <li><a class="page-scroll" ng-hide="loggedIn" href="#WhyEcoRide">Why CarPool</a></li>
+                        <li id="loginOpts">
+                            <a data-toggle="dropdown" class="btn btn-success">Login / Register
+                            <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#!/login">Login</a></li>
+                                <li><a href="#!/register">Register</a></li>
+                            </ul>
+                            <script>
+                                var loggedIn = localStorage.getItem("loggedIn");
+                                if (loggedIn != null && loggedIn.toString() == "true")
+                                    document.getElementById("loginOpts").style.visibility = 'hidden';
+                                else
+                                    document.getElementById("loginOpts").style.visibility = 'visible';
+                            </script>
+                        </li>
+                        <li id="accountInfo" ng-controller="LoginController">
+                            <a id="accountName" data-toggle="dropdown" class="btn btn-success">
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#!/profile">My Profile</a></li>
+                                <li><a href="#!/logout" ng-click="logout();">Logout</a></li>
+                            </ul>
+                            <script>
+                                window.onload = function() {
+                                    var loggedIn = localStorage.getItem("loggedIn");
+                                    if (loggedIn != null && loggedIn.toString() == "true") {
+                                        document.getElementById("accountName").innerHTML = "Hi " + localStorage.getItem("username");
+                                        document.getElementById("accountInfo").style.visibility = 'visible';
+                                    } else
+                                        document.getElementById("accountInfo").style.visibility = 'hidden';
+                                }
+                            </script>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div ng-view> </div>
+
+        <footer class="bg-primary">
+            <div class="container">
+                <img src="img/logo.png" width="100" height="100">
+                <!-- COPYRIGHT TEXT -->
+                <p>
+                    &copy;2017 eCo-Ride. All rights reserved.
+                </p>
+            </div>
+        </footer>
+    </div>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+    <!-- <div ng-view></div>
+
+    <div>Angular seed app: v<span app-version></span></div> -->
+
+    <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+    <script src="js/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/easingIn.js"></script>
+    <script src="js/eCo.js"></script>
+    <script src="app.js"></script>
+    <script src="login/login.js"></script>
+    <script src="js/services/LoginService.js"></script>
+    <script src="js/controllers/LoginController.js"></script>
+    <script src="js/services/RideService.js"></script>
+    <script src="js/controllers/RideController.js"></script>
+
+</body>
+
+</html>
