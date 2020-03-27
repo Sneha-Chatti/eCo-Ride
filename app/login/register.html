@@ -1,0 +1,64 @@
+<div ng-controller="LoginController">
+    <header style="margin-top: 60px"> </header>
+
+    <section id="Register" class="container">
+        <div class="col-md-5 ">
+            <form class="form-inline" name="registerForm" autocorrect="off" autocomplete="off">
+                <fieldset>
+                    <div>
+                        <br/>
+                        <h4>Don't have an account?</h4>
+                        <h3>Create one now</h3>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <input tabindex="1" class="form-control" type="text" required ng-model="user.username" placeholder="Username" pattern=".{5,}" autocorrect="off" autocomplete="off" title="Minimum 5 characters" />
+                        </div>
+                        <div class="form-group">
+                            <input tabindex="1" class="form-control" type="text" required ng-model="user.email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" placeholder="Email Address" id="sign-up-email" autocorrect="off" autocomplete="off" title="Enter valid email" />
+                        </div>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <input tabindex="1" class="form-control" type="text" required ng-model="user.fname" placeholder="First Name" pattern=".{3,}" autocorrect="off" autocomplete="off" title="Enter 3 or more characters" />
+                        </div>
+                        <div class="form-group">
+                            <input tabindex="1" class="form-control" type="text" required ng-model="user.lname" placeholder="Last Name" pattern=".{3,}" autocorrect="off" autocomplete="off" title="Enter 3 or more characters" />
+                        </div>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <label style="margin-left: 45px;margin-right:42px">Date of Birth : </label>
+                        </div>
+                        <div class="form-group">
+                            <input tabindex="1" class="form-control" type="date" ng-model="user.DOB" placeholder="Date of Birth" autocorrect="off" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <input tabindex="1" class="form-control" required type="password" ng-model="user.password" pattern="(?=.*\d)(?=.*[a-zA-Z]).{5,}" placeholder="Password" title="Should be of length >=5 and include a number" autocorrect="off" autocomplete="off" />
+                        </div>
+                        <div class="form-group">
+                            <input tabindex="1" class="form-control" required type="password" ng-model="user.confirmPassword" pattern="(?=.*\d)(?=.*[a-zA-Z]).{5,}" placeholder="Confirm password" title="Password doesn't match" autocorrect="off" autocomplete="off" />
+                        </div>
+
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <input tabindex="1" class="form-control" type="text" ng-model="user.car" placeholder="Car Number" autocorrect="off" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="textSpace" style="margin-top: 5px">
+                        <div class="form-group">
+                            <button class="btn btn-success" ng-click="register(user,registerForm)">Register</button>
+                            <!-- ng-disabled="registerForm.$invalid"  -->
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <img class="img-responsive" src="../img/ecoShare.gif" />
+        </div>
+    </section>
+</div>

@@ -1,0 +1,45 @@
+<div class="bg-rideimg" ng-controller="RideController">
+    <header style="margin-top: 60px" class="container"> </header>
+    <section class="bg-ride col-xs-12 col-sm-12">
+        <h1>Rides Available:</h1>
+        <ul style="list-style: none;">
+            <li data-ng-repeat="ride in ridesAvailable">
+                <form class="form-inline" name="findRideForm" autocorrect="off" autocomplete="off">
+                    <fieldset>
+                        <div class="fl col-sm-offset-2">
+                            <div class="form-control textSpace">
+                                <p tabindex="1">{{ride.source}}</p>
+                            </div>
+                        </div>
+                        <div class="fl">
+                            <div class="textSpace form-control">
+                                <p tabindex="2">{{ride.destination}}</p>
+                            </div>
+                        </div>
+                        <div class="fl">
+                            <div class="textSpace form-control">
+                                <p tabindex="3">{{ride.price}}</p>
+                            </div>
+                        </div>
+                        <div class="fl">
+                            <div class="textSpace form-control">
+                                <p tabindex="4">{{ride.capacity}}</p>
+                            </div>
+                        </div>
+                        <div class="fl">
+                            <div class="textSpace form-control">
+                                <p tabindex="5">{{ride.rideDate}}</p>
+                            </div>
+                        </div>
+                        <div class="fl">
+                            <div class="form-group">
+                                <button id="search_btn" class="btn btn-success" ng-click="bookRide()">Book</button>
+                            </div>
+                        </div>
+                        <br/><br/><br/>
+                    </fieldset>
+                </form>
+            </li>
+        </ul>
+    </section>
+</div>

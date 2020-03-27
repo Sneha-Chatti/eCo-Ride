@@ -1,0 +1,38 @@
+<div class="bg-rideimg" ng-controller="RideController">
+    <header style="margin-top: 60px" class="container"> </header>
+    <section class="bg-ride col-xs-12 col-sm-4">
+        <h1>Find a ride of your choice</h1>
+        <div class="">
+            <div class="row cities-list">
+                <form class="form-inline" name="findRideForm" autocorrect="off" autocomplete="off">
+                    <fieldset>
+                        <div class="fl">
+                            <div class="form-control textSpace">
+                                <span><i class="iMapMarkerFrom fa fa-map-marker mkr-to"></i></span>
+                                <select id="sourceSelect" ng-change="sourceSelectorChange(ride)" ng-model="ride.source">
+           					        <option value="" disabled selected>FROM</option>
+            				        <option data-ng-repeat="route in cities" ng-disabled="" value={{route}}>{{route.city}}</option>
+        				        </select>
+                            </div>
+                        </div>
+                        <div class="fl">
+                            <div class="textSpace form-control">
+                                <span><i class="iMapMarkerTo fa fa-map-marker mkr-to"></i></span>
+                                <select id="destSelect" ng-change="destinationSelectorChange(ride)" ng-model="ride.destination">
+            				        <option value="" disabled selected>TO</option>
+            				        <option data-ng-repeat="route in dCities" ng-disabled="" value={{route}}>{{route.city}}</option>
+       					        </select>
+                            </div>
+                        </div>
+                        <div class="fl">
+                            <div class="textSpace form-group">
+                                <button id="search_btn" class="btn btn-success" ng-click="findRide(ride, findRideForm)">Find ride</button>
+                            </div>
+                        </div>
+                        <br/><br/><br/>
+            </div>
+            </fieldset>
+            </form>
+        </div>
+    </section>
+</div>

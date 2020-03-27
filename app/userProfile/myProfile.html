@@ -1,0 +1,50 @@
+<div ng-controller="LoginController">
+    <header style="margin-top: 60px" class="container"> </header>
+    <section id="Register" class="container-fluid">
+        <div class="col-md-4 col-md-offset-1">
+            <form class="form-inline" name="userProfileForm" autocorrect="off" autocomplete="off">
+                <fieldset>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div>
+                        <h3 style="margin-left: 30px">User profile</h3>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <label style="margin-left: 30px;margin-right:25px">Username : </label> {{loggedInUser.username}}
+                        </div>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <label style="margin-left: 30px;margin-right:57px">Email : </label> {{loggedInUser.email}}
+                        </div>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <label style="margin-left: 30px;margin-right:22px">First name : </label> {{loggedInUser.fname}}
+                        </div>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <label style="margin-left: 30px;margin-right:25px">Last name : </label> {{loggedInUser.lname}}
+                        </div>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <label style="margin-left: 30px;margin-right:3px">Date of Birth : </label> {{loggedInUser.DOB}}
+                        </div>
+                    </div>
+                    <div class="textSpace">
+                        <div class="form-group">
+                            <label style="margin-left: 30px;margin-right:15px">Car number : </label> {{loggedInUser.car}}
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-md-6 col-xs-12" style="margin-top:50px">
+            <img class="img-responsive sideImg" src="../img/shareRide.gif" />
+        </div>
+    </section>
+</div>

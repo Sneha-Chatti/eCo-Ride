@@ -1,0 +1,51 @@
+<div class="bg-rideimg" ng-controller="RideController">
+    <header style="margin-top: 60px" class="container"> </header>
+    <section class="bg-ride col-xs-12 col-sm-6">
+        <form class="form-inline" name="postRideForm" autocorrect="off" autocomplete="off">
+            <fieldset>
+                <h1>Share a ride and reduce commuting costs</h1>
+                <div class="row cities-list">
+                    <div class="fl">
+                        <div class="form-control textSpace">
+                            <span><i class="iMapMarkerFrom fa fa-map-marker mkr-to"></i></span>
+                            <select id="sourceSelect" ng-change="sourceSelectorChange(ride)" ng-model="ride.source">
+           					        <option value="" disabled selected>From</option>
+            				        <option data-ng-repeat="route in cities" ng-disabled="" value={{route}}>{{route.city}}</option>
+        				    </select>
+                        </div>
+                    </div>
+                    <div class="fl">
+                        <div class="textSpace form-control">
+                            <span><i class="iMapMarkerTo fa fa-map-marker mkr-to"></i></span>
+                            <select id="destSelect" ng-change="destinationSelectorChange(ride)" ng-model="ride.destination">
+            				        <option value="" disabled selected>To</option>
+            				        <option data-ng-repeat="route in dCities" ng-disabled="" value={{route}}>{{route.city}}</option>
+       					    </select>
+                        </div>
+                    </div>
+                    <div class="fl">
+                        <div class="textSpace form-control">
+                            <input type="text" ng-model="ride.capacity" placeholder="Capacity" autocorrect="off" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="fl">
+                        <div class="textSpace form-control">
+                            <input type="text" ng-model="ride.price" placeholder="Fare in Rs." autocorrect="off" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="fl">
+                        <div class="textSpace form-control">
+                            <input type="datetime-local" value="2017-10-01" placeholder="Date" tabindex="3" autocorrect="off" autocomplete="off" ng-model="ride.rideDate" />
+                        </div>
+                    </div>
+                    <div class="fl">
+                        <div class="textSpace form-group">
+                            <button id="search_btn" class="btn btn-success" ng-click="postRide(ride, postRideForm)">Post trip</button>
+                        </div>
+                    </div>
+                    <br/><br/><br/>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+</div>
