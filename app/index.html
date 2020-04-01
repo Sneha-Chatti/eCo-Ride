@@ -13,8 +13,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="img/logo.ico" />
-    <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css"> -->
-    <!-- <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css"> -->
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" />
     <link href='https://fonts.googleapis.com/css?family=Comfortaa:400,300,700' rel='stylesheet' type='text/css'>
@@ -25,13 +25,13 @@
     <link rel="stylesheet/less" href="css/eCo-theme.less">
     <link rel="stylesheet" href="css/eCo.css">
 
-    <!-- <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script> -->
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
     <script type="text/javascript" src="js/less.min.js"></script>
     <!-- Less Should be added after all the style sheets are added -->
 </head>
 
 <body class="bg-primary" id="top" ng-cloak>
-    <div>
+    <div ng-controller="SpeechController">
         <nav class="navbar navbar-default navbar-fixed-top bg-primary" role="navigation">
             <div class="container">
                 <div class="navbar-header navbar-left">
@@ -132,6 +132,7 @@
     <script src="js/controllers/LoginController.js"></script>
     <script src="js/services/RideService.js"></script>
     <script src="js/controllers/RideController.js"></script>
+    <script src="js/controllers/SpeechController.js"></script>
 
 </body>
 

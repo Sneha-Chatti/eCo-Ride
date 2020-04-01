@@ -9,6 +9,7 @@ var ecoRideApp = angular.module('ecoRideApp', ['ngRoute'])
             $routeProvider
                 .when('/home', {
                     templateUrl: 'home.html',
+                    controller: 'SpeechController',
                 })
                 .when('/login', {
                     templateUrl: '/login/login.html',
