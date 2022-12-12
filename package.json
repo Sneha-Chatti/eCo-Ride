@@ -9,7 +9,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "less": "^2.7.2",
-    "express": "^4.15.4",
+    "express": "^4.17.3",
     "babel-cli": "^6.26.0",
     "babel-preset-node6": "^11.0.0",
     "body-parser": "*",
